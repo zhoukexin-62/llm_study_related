@@ -127,3 +127,25 @@ trainer = Trainer(
 
 print('trainer start--------')
 trainer.train() # 开始训练
+
+# 9. 保存模型
+
+# lora 模型保存
+save_dir = "./save_models"
+model.save_pretrained(save_dir)
+tokenizer.save_pretrained(save_dir)
+
+print('lora model saved--------')
+
+# 全量模型保存
+
+final_save_dir = "./final_save_models"
+base_model = AutoModelForCausalLM.from_pretrained(model_name) # 基础模型
+
+model = PeftModel.from_pretrained(base_model, save_dir)
+model = model.merge_and_unload() # 合并模型
+
+model.save_pretrained(final_save_dir)
+tokenizer.save_pretrained(final_save_dir)
+
+print('final model saved--------')
