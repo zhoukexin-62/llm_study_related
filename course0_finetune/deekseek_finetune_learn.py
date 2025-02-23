@@ -123,3 +123,7 @@ trainer = Trainer(
     train_dataset = tokenized_train_ds,
     eval_dataset = tokenized_test_ds
 ) # 定义训练器
+
+
+print('trainer start--------')
+trainer.train() # 开始训练
