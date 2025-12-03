@@ -1,8 +1,0 @@
-LLM_rela手撕系列分上【模型部分】、下【训练部分】
-
-# 学习目标
-1. 从LLM的基础transformer出发，实现里面的attention、fnn、pe、norm、激活函数各组件
-2. 基于llama、deepseek等实现对transformer各组件的改进
-3. 综合检验项目为莎士比亚数据集实现自己的GPT-2，了解llm流程【主要是模型构建部分】
-4. 通过minimind与tinyZero了解llm流程【主要是模型训练部分】
-5. 阅读相关论文与技术报告
